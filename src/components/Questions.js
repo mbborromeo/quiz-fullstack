@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 /* custom hook */
 import { useFetchQuestion } from "../hooks/FetchQuestion.js";
 
-const Questions = () => {
+const Questions = ({ onChecked }) => {
   const [checked, setChecked] = useState(undefined);
   const [{ isLoading, apiData, serverError }, setGetData] = useFetchQuestion();
   // const question = data[0];
@@ -23,9 +23,9 @@ const Questions = () => {
     console.log("serverError", serverError);
   });
 
-  const onSelect = () => {
+  const onSelect = (i) => {
     // setChecked(true);
-    console.log("radio btn change");
+    onChecked(i);
   };
 
   if (isLoading) {
@@ -48,7 +48,7 @@ const Questions = () => {
               value={false}
               name="options"
               id={`q${i}-option`}
-              onChange={onSelect}
+              onChange={() => onSelect(i)}
             />
             <label htmlFor={`q${i}-option`} className="text-primary">
               {q}
