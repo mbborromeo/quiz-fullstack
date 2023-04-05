@@ -27,12 +27,23 @@ export const questionReducer = createSlice({
         trace: state.trace - 1,
       };
     },
+    resetAllAction: () => {
+      return {
+        queue: [],
+        answers: [],
+        trace: 0,
+      };
+    },
   },
 });
 
 // why .actions and not .reducers?
-export const { startExamAction, moveNextAction, movePrevAction } =
-  questionReducer.actions;
+export const {
+  startExamAction,
+  moveNextAction,
+  movePrevAction,
+  resetAllAction,
+} = questionReducer.actions;
 
 // why not .reducers?
 export default questionReducer.reducer;
