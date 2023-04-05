@@ -13,11 +13,18 @@ export const resultReducer = createSlice({
     pushResultAction: (state, action) => {
       state.result.push(action.payload);
     },
+    resetResultAction: () => {
+      return {
+        userId: null,
+        result: [],
+      };
+    },
   },
 });
 
 // where does actions come from?
-export const { setUserId, pushResultAction } = resultReducer.actions;
+export const { setUserId, pushResultAction, resetResultAction } =
+  resultReducer.actions;
 
 // why not .reducers?
 export default resultReducer.reducer;
