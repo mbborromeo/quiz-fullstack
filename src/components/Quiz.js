@@ -29,7 +29,12 @@ export default function Quiz() {
     // update the trace question value */
     if (trace < queue.length) {
       dispatch(MoveNextQuestion());
-      dispatch(PushAnswer(check));
+
+      // insert a new result in the array
+      // only if user has not answered this question before?
+      if (result.length <= trace) {
+        dispatch(PushAnswer(check));
+      }
     }
   };
 
@@ -51,9 +56,13 @@ export default function Quiz() {
       <Questions onChecked={onChecked} />
 
       <div className="grid">
-        <button className="btn prev" onClick={onPrev}>
-          Prev
-        </button>
+        {trace > 0 ? (
+          <button className="btn prev" onClick={onPrev}>
+            Prev
+          </button>
+        ) : (
+          <div></div>
+        )}
         <button className="btn next" onClick={onNext}>
           Next
         </button>
