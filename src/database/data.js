@@ -10,3 +10,5 @@ export default [
     options: ["Argentina", "France", "Italy"],
   },
 ];
+
+export const answers = [0, 0];

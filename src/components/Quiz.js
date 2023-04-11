@@ -13,10 +13,6 @@ export default function Quiz() {
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("result", result);
-  });
-
   const onPrev = () => {
     console.log("on previous");
     if (trace > 0) {
@@ -26,7 +22,7 @@ export default function Quiz() {
 
   const onNext = () => {
     console.log("on next");
-    // update the trace question value */
+    /* update the trace question value */
     if (trace < queue.length) {
       dispatch(MoveNextQuestion());
 
@@ -35,6 +31,9 @@ export default function Quiz() {
       if (result.length <= trace) {
         dispatch(PushAnswer(check));
       }
+
+      /* reset selected value for next question */
+      setChecked(undefined);
     }
   };
 
