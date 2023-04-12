@@ -18,10 +18,6 @@ export default function Result() {
     result: { result, userId },
   } = useSelector((state) => state);
 
-  useEffect(() => {
-    console.log("flag", flag);
-  });
-
   const totalPoints = queue.length * 10;
   const attempts = attempts_Number(result);
   const earnPoints = earnPoints_Number(result, answers, 10);
