@@ -53,7 +53,10 @@ export default function Result() {
         <div className="flex">
           <span>Quiz Results</span>
           <span className="bold" style={{ color: `${flag ? "green" : "red"}` }}>
-            {flag ? "Pass" : "Fail"} {`${(earnPoints / totalPoints) * 100}%`}
+            {flag ? "Pass" : "Fail"}{" "}
+            {earnPoints && totalPoints
+              ? `${(earnPoints / totalPoints) * 100}%`
+              : "0"}
           </span>
         </div>
       </div>
