@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import cors from "cors";
 import { config } from "dotenv";
+import router from "./router/route.js";
 
 const app = express();
 
@@ -15,6 +16,10 @@ config(); // initialise app with Dotenv
 const port = process.env.PORT || 8080; // process.env.PORT doesn't exist for some reason
 
 /* ROUTES */
+/* api routes */
+app.use("/api", router);
+
+/* root route */
 app.get("/", (req, res) => {
   try {
     res.json("Get root request");
