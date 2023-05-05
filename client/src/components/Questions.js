@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import data from "../database/data.js";
 
 /* custom hook */
 import { useFetchQuestion } from "../hooks/FetchQuestion.js";
