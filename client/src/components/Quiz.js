@@ -14,14 +14,12 @@ export default function Quiz() {
   const dispatch = useDispatch();
 
   const onPrev = () => {
-    console.log("on previous");
     if (trace > 0) {
       dispatch(MovePrevQuestion());
     }
   };
 
   const onNext = () => {
-    console.log("on next");
     /* update the trace question value */
     if (trace < queue.length) {
       dispatch(MoveNextQuestion());
@@ -38,7 +36,6 @@ export default function Quiz() {
   };
 
   const onChecked = (check) => {
-    console.log("check", check);
     setChecked(check);
   };
 

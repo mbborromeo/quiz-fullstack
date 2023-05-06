@@ -10,6 +10,7 @@ import {
   earnPoints_Number,
   flagResult,
 } from "../helper/helper";
+import { usePublishResult } from "../hooks/setResult";
 
 export default function Result() {
   const dispatch = useDispatch();
@@ -23,8 +24,16 @@ export default function Result() {
   const earnPoints = earnPoints_Number(result, answers, 10);
   const flag = flagResult(totalPoints, earnPoints);
 
+  // store user result on database */
+  usePublishResult({
+    result,
+    username: userId,
+    attempts,
+    points: earnPoints,
+    achieved: flag ? "Pass" : "Fail",
+  });
+
   const onRestart = () => {
-    console.log("on restart");
     dispatch(resetAllAction());
     dispatch(resetResultAction());
   };
@@ -35,11 +44,16 @@ export default function Result() {
 
       <div className="result flex-center">
         <div className="flex">
-          <span>Answered Questions</span>
+          <span>Username</span>
+          <span className="bold">{userId || ""}</span>
+        </div>
+
+        <div className="flex">
+          <span>Attempted Questions</span>
           <span className="bold">{attempts || 0}</span>
         </div>
         <div className="flex">
-          <span>Total Questions</span>
+          <span>Out of</span>
           <span className="bold">{queue.length || 0}</span>
         </div>
         <div className="flex">

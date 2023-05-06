@@ -6,12 +6,12 @@ const router = Router();
 
 /* Questions routes API */
 // router.get("/questions", controller.getQuestions);
-// router.post("/questions", controller.insertQuestions);
+// router.post("/questions", controller.storeQuestions);
 // chaining technique equivalent to above
 router
   .route("/questions")
   .get(controller.getQuestions)
-  .post(controller.insertQuestions)
+  .post(controller.storeQuestions)
   .delete(controller.dropQuestions);
 
 router
