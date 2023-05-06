@@ -44,11 +44,16 @@ export default function Result() {
 
       <div className="result flex-center">
         <div className="flex">
-          <span>Answered Questions</span>
+          <span>Username</span>
+          <span className="bold">{userId || ""}</span>
+        </div>
+
+        <div className="flex">
+          <span>Attempted Questions</span>
           <span className="bold">{attempts || 0}</span>
         </div>
         <div className="flex">
-          <span>Total Questions</span>
+          <span>Out of</span>
           <span className="bold">{queue.length || 0}</span>
         </div>
         <div className="flex">
