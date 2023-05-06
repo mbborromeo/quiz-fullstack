@@ -15,7 +15,7 @@ export function earnPoints_Number(result, answers, point) {
 }
 
 export function flagResult(totalPoints, earnPoints) {
-  // return (totalPoints * 50) / 100 < earnPoints;
+  // returns true or false
   return Math.round(earnPoints / totalPoints) >= 0.5;
 }
 
@@ -27,7 +27,6 @@ export function CheckUserExist({ children }) {
 
 /* get server data */
 export async function getServerData(url, callback) {
-  console.log("getServerData");
   const data = await (await axios.get(url))?.data;
   return callback ? callback(data) : data;
 }

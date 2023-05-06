@@ -33,12 +33,6 @@ app.get("/", (req, res) => {
 
 /** Connect to MongoDB database */
 
-// connect();
-// app.listen(port, () => {
-//   console.log("process.env", process.env);
-//   console.log(`Server connected to http://localhost:${port}`);
-// });
-
 // Start server only when we have a valid database connection
 connect()
   .then(() => {

@@ -25,7 +25,6 @@ export const useFetchQuestion = () => {
           `${process.env.REACT_APP_SERVER_HOSTNAME}/api/questions`,
           (data) => data
         );
-        console.log({ questions, answers });
 
         if (questions.length > 0) {
           setGetData((prev) => ({ ...prev, isLoading: false }));

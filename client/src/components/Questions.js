@@ -14,7 +14,6 @@ const Questions = ({ onChecked }) => {
   const { result } = useSelector((state) => state.result);
 
   const [{ isLoading, apiData, serverError }] = useFetchQuestion();
-  // const question = data[0];
   useSelector((state) => console.log(state));
 
   const question = useSelector(
