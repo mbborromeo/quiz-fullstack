@@ -18,12 +18,12 @@ export default function Main() {
 
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz app</h1>
+      <h1 className="title text-light">Canadian Trivia Quiz</h1>
 
       <ol>
         <li>There are 10 questions</li>
         <li>10 points rewarded for each correct answer</li>
-        <li>Each q has 3 options</li>
+        <li>Each question is multiple choice with only 1 correct answer</li>
         <li>You can review and change answers before the quiz finishes</li>
         <li>Results will be declared upon submission</li>
       </ol>
