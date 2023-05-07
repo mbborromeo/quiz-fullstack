@@ -46,7 +46,7 @@ export default function Quiz() {
 
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz component</h1>
+      <h1 className="title text-light">Canadian Trivia</h1>
 
       {/* display questions */}
       <Questions onChecked={onChecked} />
